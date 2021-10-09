@@ -1,0 +1,6 @@
+main: net.chevalier.staffutility.Main
+name: StaffUtility
+version: 1.0
+author: Chevalier-Network
+commands:
+  staffutility:
