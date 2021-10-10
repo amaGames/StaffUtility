@@ -4,3 +4,5 @@ version: 1.0
 author: Chevalier-Network
 commands:
   staffutility:
+    description: Show the plugin information.
+  force:

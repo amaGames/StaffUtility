@@ -2,10 +2,8 @@ package net.chevalier.staffutility.utils;
 
 import net.chevalier.staffutility.StaffUtility;
 import net.chevalier.staffutility.utils.logs.LogLevel;
-import org.bukkit.command.CommandSender;
 
 import java.text.MessageFormat;
-import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class LocalizedMessage {

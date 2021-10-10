@@ -2,7 +2,7 @@ package net.chevalier.staffutility.utils.commands;
 
 import net.chevalier.staffutility.utils.commands.objects.Permission;
 import net.chevalier.staffutility.utils.commands.objects.Sender;
-import org.bukkit.command.CommandSender;
+import net.chevalier.staffutility.utils.logs.LogLevel;
 
 public abstract class AbstractCommand {
 
@@ -32,6 +32,10 @@ public abstract class AbstractCommand {
 
 	public Permission getPermission() {
 		return this.permission;
+	}
+
+	public void sendUsage(Sender sender) {
+		sender.sendMessage(this.usage, LogLevel.INFO);
 	}
 
 	public abstract void execute(Sender sender, String[] args);

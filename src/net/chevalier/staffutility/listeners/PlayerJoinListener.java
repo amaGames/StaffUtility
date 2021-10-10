@@ -1,7 +1,6 @@
 package net.chevalier.staffutility.listeners;
 
 import net.chevalier.staffutility.utils.PlayerManager;
-import net.chevalier.staffutility.utils.players.PlayerAccount;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -12,7 +11,7 @@ public class PlayerJoinListener implements Listener {
 	@EventHandler
 	public void onPlayerJoin(PlayerJoinEvent event) {
 		Player player = event.getPlayer();
-		PlayerManager.getOnlinePlayer(player.getUniqueId(), player).updatedInstance(player);
+		PlayerManager.getOnlinePlayer(player.getUniqueId(), player).updateInstance(player);
 	}
 
 }

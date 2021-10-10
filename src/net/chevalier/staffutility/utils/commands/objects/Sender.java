@@ -1,8 +1,8 @@
 package net.chevalier.staffutility.utils.commands.objects;
 
+import net.chevalier.staffutility.StaffUtility;
 import net.chevalier.staffutility.utils.LocalizedMessage;
 import net.chevalier.staffutility.utils.logs.LogLevel;
-import org.bukkit.OfflinePlayer;
 import org.bukkit.command.CommandSender;
 
 public class Sender {
@@ -19,12 +19,20 @@ public class Sender {
 		this.sender.sendMessage(LocalizedMessage.getLocalizedMessage(key, level, args));
 	}
 
+	public void sendLegacyMessage(String message, LogLevel level) {
+		this.sender.sendMessage(level.getPrefix() + message);
+	}
+
 	public Permission getPermission() {
 		return this.permission;
 	}
 
-	public void updatedInstance(CommandSender sender) {
+	public void updateInstance(CommandSender sender) {
 		this.sender = sender;
+	}
+
+	public CommandSender getSender() {
+		return this.sender;
 	}
 
 }
