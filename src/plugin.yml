@@ -5,4 +5,12 @@ author: Chevalier-Network
 commands:
   staffutility:
     description: Show the plugin information.
+  skick:
+    description: Kick the player.
+  sban:
+    description: Ban the player.
+  smute:
+    description: Mute the player.
+  swarn:
+    description: Warn the player.
   force:

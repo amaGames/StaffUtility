@@ -4,6 +4,7 @@ import net.chevalier.staffutility.StaffUtility;
 import net.chevalier.staffutility.utils.commands.objects.Permission;
 import net.chevalier.staffutility.utils.logs.LogLevel;
 import net.chevalier.staffutility.utils.players.PlayerAccount;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 
 import java.util.UUID;

@@ -25,4 +25,11 @@ public class PlayerAccount extends Sender {
 		return this.uniqueId;
 	}
 
+	public void kickPlayer(String reason) {
+		Player player = Bukkit.getPlayer(uniqueId);
+		if (!(player == null)) {
+			player.kickPlayer(reason);
+		}
+	}
+
 }
