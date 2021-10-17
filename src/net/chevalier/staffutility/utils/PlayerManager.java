@@ -4,6 +4,7 @@ import net.chevalier.staffutility.StaffUtility;
 import net.chevalier.staffutility.utils.commands.objects.Permission;
 import net.chevalier.staffutility.utils.logs.LogLevel;
 import net.chevalier.staffutility.utils.players.PlayerAccount;
+import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 
@@ -24,12 +25,15 @@ public class PlayerManager {
 
 	public static PlayerAccount getOnlinePlayer(UUID uniqueId, Player onlinePlayer) {
 		PlayerAccount player = PLAYER_MAP.get(uniqueId);
-		return player == null ? addPlayer(new PlayerAccount(uniqueId, onlinePlayer, Permission.DEFAULT)) : player;
+		return player == null ? addPlayer(new PlayerAccount(uniqueId, onlinePlayer, Permission.STAFF)) : player;
 	}
 
-	public static PlayerAccount getPlayer(UUID uniqueId) {
-		PlayerAccount player = PLAYER_MAP.get(uniqueId);
-		return player == null ? addPlayer(new PlayerAccount(uniqueId, Permission.DEFAULT)) : player;
+	/*
+	Null検証
+	 */
+	public static PlayerAccount getOnlinePlayerByName(String name) {
+		Player onlinePlayer = Bukkit.getPlayer(name);
+		return onlinePlayer == null ? null : getOnlinePlayer(onlinePlayer.getUniqueId(), onlinePlayer);
 	}
 
 }

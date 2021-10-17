@@ -13,4 +13,3 @@ commands:
     description: Mute the player.
   swarn:
     description: Warn the player.
-  force:

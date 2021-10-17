@@ -11,7 +11,7 @@ public class PlayerJoinListener implements Listener {
 	@EventHandler
 	public void onPlayerJoin(PlayerJoinEvent event) {
 		Player player = event.getPlayer();
-		PlayerManager.getOnlinePlayer(player.getUniqueId(), player).updateInstance(player);
+		PlayerManager.getOnlinePlayer(player.getUniqueId(), player).updatePlayerInstance(player);
 	}
 
 }

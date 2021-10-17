@@ -2,20 +2,16 @@ package net.chevalier.staffutility.commands;
 
 import net.chevalier.staffutility.utils.ArgumentConverter;
 import net.chevalier.staffutility.utils.PlayerManager;
-import net.chevalier.staffutility.utils.ScheduleManager;
-import net.chevalier.staffutility.utils.WebHookManager;
 import net.chevalier.staffutility.utils.commands.AbstractCommand;
 import net.chevalier.staffutility.utils.commands.objects.Permission;
 import net.chevalier.staffutility.utils.commands.objects.Sender;
 import net.chevalier.staffutility.utils.logs.LogLevel;
 import net.chevalier.staffutility.utils.players.PlayerAccount;
-import net.chevalier.staffutility.utils.webhooks.Embed;
-import net.chevalier.staffutility.utils.webhooks.Message;
 
-public class KickCommand extends AbstractCommand {
+public class BanCommand extends AbstractCommand {
 
-	public KickCommand() {
-		super("skick", "command.skick.result.defusage", "command.skick.result.defdescription", Permission.STAFF);
+	public BanCommand() {
+		super("sban", "command.sban.result.defusage", "command.sban.result.defdescription", Permission.STAFF);
 	}
 
 	@Override
@@ -24,8 +20,8 @@ public class KickCommand extends AbstractCommand {
 			PlayerAccount player = PlayerManager.getOnlinePlayerByName(args[0]);
 			if (!(player == null)) {
 				String reason = ArgumentConverter.getArgumentsByArray(args, 1, " ");
-				player.kickPlayer(reason, sender.getName());
-				sender.sendMessage("command.skick.result.success", LogLevel.SUCCESS, player.getName(), sender.getName(), reason);
+
+				sender.sendMessage("command.sban.result.success", LogLevel.SUCCESS, player.getName(), sender.getName(), reason);
 				/*
 				ScheduleManager.addTask(new Runnable() {
 
@@ -44,7 +40,7 @@ public class KickCommand extends AbstractCommand {
 				*/
 				return;
 			}
-			sender.sendMessage("command.skick.result.failed", LogLevel.WARN, args[0]);
+			sender.sendMessage("command.sban.result.failed", LogLevel.WARN, args[0]);
 		}
 		else {
 			this.sendUsage(sender);

@@ -9,10 +9,12 @@ public class Sender {
 
 	private CommandSender sender;
 	private Permission permission;
+	private String name;
 
 	public Sender(CommandSender sender, Permission permission) {
 		this.sender = sender;
 		this.permission = permission;
+		this.name = this.sender.getName();
 	}
 
 	public void sendMessage(String key, LogLevel level, String... args) {
@@ -29,10 +31,15 @@ public class Sender {
 
 	public void updateInstance(CommandSender sender) {
 		this.sender = sender;
+		this.name = this.sender.getName();
 	}
 
 	public CommandSender getSender() {
 		return this.sender;
+	}
+
+	public String getName() {
+		return this.name;
 	}
 
 }

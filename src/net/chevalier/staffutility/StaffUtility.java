@@ -19,7 +19,7 @@ public class StaffUtility {
 	protected static void initialize(JavaPlugin instance) {
 		staffUtility = instance;
 		console = new Sender(Bukkit.getConsoleSender(), Permission.STAFF);
-		locale = Locale.getDefault();
+		locale = defaultLocale;
 	}
 
 	public static Locale getLocale() {
